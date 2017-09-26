@@ -17,7 +17,7 @@
      */
 require_once "vendor/easyrdf/easyrdf/lib/EasyRdf.php";
     require_once "vendor/easyrdf/easyrdf/lib/html_tag_helpers.php";
-    require_once realpath(__DIR__.'/..')."/rdf/vendor/autoload.php";
+    require_once "vendor/autoload.php";
     require_once "vendor/easyrdf/easyrdf/lib/EasyRdf/Format.php";
     $formats = array(
       'PNG' => 'png',
