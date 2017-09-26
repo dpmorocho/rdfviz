@@ -9,7 +9,6 @@ RDFViz es un visualizador de datos RDF escrito en PHP.
   - Cargar cualquiera de los archivos HTML dependiendo de la visualización deseada. Existe el tipo tabla de datos y gráfico de barras.
   - En el campo ENDPOINT ingresa la url de la fuente de datos.
   - Ingresa una consulta  o solo pulsa consultar para ver los resultados de la consulta predefinida.
-  - Opcional, si no quieres tablas html, puedes seleccionar texto plano marcando la casilla de selección junto a los botones.
 
 
 ### Dependencias Usadas
