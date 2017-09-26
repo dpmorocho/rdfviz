@@ -8,7 +8,7 @@
 ?>
 <html>
 <head>
-  <title>Consultas SPARQL</title>
+  <title>Consultas SPARQL - DATAVIZ</title>
   <style type="text/css">
     .error {
       width: 35em;
