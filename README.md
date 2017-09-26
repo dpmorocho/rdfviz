@@ -20,4 +20,4 @@ Este proyecto usa las siguientes librerías:
 
 ### License
 
-MIT
+GPL V3
