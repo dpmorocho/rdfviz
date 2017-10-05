@@ -38,13 +38,10 @@
     }
     function render(json) {
       var config = {
+      	"width":  1000,
         "selector": "#result"
       }
       d3sparql.htmltable(json, config)
-    }
-
-    function exec_offline() {
-      d3.json("cache/interpro/1117-hk.json", render)
     }
     function toggle() {
       d3sparql.toggle()
@@ -62,8 +59,8 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gráficos<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Consulta x1</a></li>
-                  <li><a href="#">Consulta x2</a></li>
+                  <li><a href="tabla.php">Consulta x1</a></li>
+                  <li><a href="barra.php">Consulta x2</a></li>
                   <li><a href="#">Consulta x3</a></li>
                   <li><a href="#">Consulta x4</a></li>
                 </ul>
@@ -76,8 +73,8 @@
     <div id="query" style="margin: 10px">
       <h1>Tabla de datos</h1>
       <form class="form-inline">
+        <div class="input-append">
           <button class="btn" type="button" onclick="toggle()">Mostrar consulta</button>
-          <button class="btn" type="button" onclick="exec()">Ejecutar consulta</button>
         </div>
       </form>
       <textarea id="sparql" class="span9" rows=15 style="width:80%;">
