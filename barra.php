@@ -46,6 +46,7 @@
         "selector": "#result"
       }
       d3sparql.barchart(json, config)
+      d3sparql.toggle()
     }
     function toggle() {
       d3sparql.toggle()
@@ -64,13 +65,13 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="./">Inicio</a></li>
+            <li role="presentation" ><a href="./">Inicio</a></li>
             <li role="presentation" ><a href="consultas.php">Consultas</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gráficos<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="tabla.php">Consulta x1</a></li>
-                  <li><a href="barra.php">Consulta x2</a></li>
+                  <li><a href="tabla.php">Tabla</a></li>
+                  <li><a href="barra.php">Barra</a></li>
                   <li><a href="#">Consulta x3</a></li>
                   <li><a href="#">Consulta x4</a></li>
                 </ul>
