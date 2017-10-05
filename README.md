@@ -21,4 +21,4 @@ Este proyecto usa las siguientes librerías:
 
 ### License
 
-GPL V3
+GPL V3 / CC
