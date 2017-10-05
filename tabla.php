@@ -31,7 +31,7 @@
     
     <script>
     function exec() {
-      var endpoint = d3.select("#endpoint").property("value")
+      var endpoint = 'http://togostanza.org/sparql'
       var sparql = d3.select("#sparql").property("value")
       d3sparql.query(endpoint, sparql, render)
       d3sparql.toggle()
@@ -76,11 +76,8 @@
     <div id="query" style="margin: 10px">
       <h1>Tabla de datos</h1>
       <form class="form-inline">
-        <label>SPARQL endpoint:</label>
-        <div class="input-append">
-          <input id="endpoint" class="span5" value="http://togostanza.org/sparql" type="text">
-          <button class="btn" type="button" onclick="exec()">Consultar</button>
-          <button class="btn" type="button" onclick="toggle()">Ocultar Texto</button>
+          <button class="btn" type="button" onclick="toggle()">Mostrar consulta</button>
+          <button class="btn" type="button" onclick="exec()">Ejecutar consulta</button>
         </div>
       </form>
       <textarea id="sparql" class="span9" rows=15 style="width:80%;">
