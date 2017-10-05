@@ -3,8 +3,8 @@
 <html>
   <head>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="d3.v3.min.js"></script>
-    <script src="d3sparql.js"></script>
+    <script src="js/d3.v3.min.js"></script>
+    <script src="js/d3sparql.js"></script>
     <script>
     function exec() {
       var endpoint = d3.select("#endpoint").property("value")
