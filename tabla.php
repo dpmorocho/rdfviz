@@ -42,6 +42,10 @@
       }
       d3sparql.htmltable(json, config)
     }
+
+    function exec_offline() {
+      d3.json("cache/interpro/1117-hk.json", render)
+    }
     function toggle() {
       d3sparql.toggle()
     }
@@ -76,11 +80,38 @@
         <div class="input-append">
           <input id="endpoint" class="span5" value="http://togostanza.org/sparql" type="text">
           <button class="btn" type="button" onclick="exec()">Consultar</button>
-          <button class="btn" type="button" onclick="toggle()">Mostrar Consulta</button>
+          <button class="btn" type="button" onclick="toggle()">Ocultar Texto</button>
         </div>
       </form>
       <textarea id="sparql" class="span9" rows=15 style="width:80%;">
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX id_tax:<http://identifiers.org/taxonomy/>
+PREFIX tax: <http://ddbj.nig.ac.jp/ontologies/taxonomy/>
+PREFIX stats:  <http://togogenome.org/stats/>
+PREFIX up: <http://purl.uniprot.org/core/>
+PREFIX ipr: <http://purl.uniprot.org/interpro/>
 
+SELECT DISTINCT ?organism ?label ?length ?genes (COUNT(DISTINCT ?protein) AS ?hks)
+{
+  {
+    SELECT DISTINCT ?organism ?up_tax ?label ?length ?genes
+    WHERE
+    {
+      # Cyanobacteria (1117)
+      ?organism a tax:Taxon ;
+        rdfs:subClassOf+ id_tax:1117 ;
+        stats:sequence_length ?length ;
+        stats:gene ?genes ;
+        tax:scientificName ?label .
+        BIND (IRI(REPLACE(STR(?organism), "http://identifiers.org/taxonomy/", "http://purl.uniprot.org/taxonomy/")) AS ?up_tax)
+    }
+  }
+  ?up_tax a up:Taxon .
+  ?protein up:organism ?up_tax ;
+    a up:Protein .
+  # Signal transduction histidine kinase (IPR005467)
+  ?protein rdfs:seeAlso ipr:IPR005467 .
+} GROUP BY ?organism ?label ?length ?genes ORDER BY ?length
       </textarea>
     </div>
     <div id="result"></div>
